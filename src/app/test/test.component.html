@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <h1 class="col-lg-12">this test component for testing</h1>
+
+    <form #fo="ngForm" (ngSubmit)="mySubmit(fo)" class="col-lg-12">
+      <label>Enter Name</label>
+
+      <input id="name" class="form-control col-lg-6 col-md-6" appForbiddenName="bob" name="name" [(ngModel)]="name"
+        #myName="ngModel" required minlength="3" placeholder="Enter Name" (keyup.enter)="clickable(fo);myName.value=''">
+
+      <div *ngIf="myName.invalid && (myName.dirty || myName.touched)" class="alert alert-danger col-lg-12">
+
+        <div *ngIf="myName.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="myName.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="myName.errors.forbiddenName">
+          Name cannot be Bob.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <input type="checkbox" name="chk1" [(ngModel)]="chk1"> listOne<br>
+        <input type="checkbox" name="chk2" [(ngModel)]="chk2"> ListTow<br>
+      </div>
+      <button type="submit">click me</button>
+
+    </form>
+  </div>
+</div>
+
+
+<ul *ngFor="let l of lst1">
+  <li>{{l}}</li>
+</ul>
+<p>-------------------------</p>
+
+<ul *ngFor="let l of lst2">
+    <li>{{l}}</li>
+  </ul>

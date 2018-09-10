@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
  import { ReactiveFormsModule } from '@angular/forms';
 import { Valid3Component } from './valid3/valid3.component';
 import { CustomMinDirective } from './valid3/custom-min-validator.directive';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CustomMinDirective } from './valid3/custom-min-validator.directive';
     ValidTestComponent,
     valid2Component,
     Valid3Component,
-    CustomMinDirective
+    CustomMinDirective,
+    TestComponent
     ],
   imports: [
     BrowserModule,
