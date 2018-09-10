@@ -1,0 +1,42 @@
+<h1>Valid3</h1>
+
+<form #fo="ngForm" (ngSubmit)="mySubmit(fo)">
+  <h2>Name</h2>
+
+  <input id="name" name="name" class="form-control" required minlength="4" appForbiddenName="bob" [(ngModel)]="hero.name"
+    #name="ngModel">
+
+  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+    <div *ngIf="name.errors.required">
+      Name is required.
+    </div>
+    <div *ngIf="name.errors.minlength">
+      Name must be at least 4 characters long.
+    </div>
+    <div *ngIf="name.errors.forbiddenName">
+      Name cannot be Bob.
+    </div>
+  </div>
+  <h2>Age</h2>
+  <input type="number" name="age" class="form-control" required min="14" appForbiddenName="bob" [(ngModel)]="hero.age" #myage="ngModel">
+  
+
+  <div *ngIf="myage.invalid && (myage.dirty || myage.touched)" class="alert alert-danger">
+
+    <div *ngIf="myage.errors.required">
+      Age is required.
+    </div>
+    <div *ngIf="myage.errors?.min">
+      Name must be at least 14 ys
+    </div>
+    <div *ngIf="myage.errors.forbiddenName">
+      Name cannot be Bob.
+    </div>
+  </div>
+  <button type="submit">click me</button>
+</form>
+<div *ngFor="let o of hero">
+  <h4>{{o.name}}</h4>
+  <h4>{{o.age}}</h4>
+</div>

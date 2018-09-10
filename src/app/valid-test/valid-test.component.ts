@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+
 @Component({
   selector: 'app-valid-test',
   templateUrl: './valid-test.component.html',
@@ -7,7 +8,7 @@ import { FormsModule } from "@angular/forms";
 })
 export class ValidTestComponent implements OnInit {
   //emp = { name: string, age: number, dob: Date };
-  emp = [];
+  emp = [{ }];
   test: string;
   constructor() {
     this.emp = [
@@ -21,6 +22,6 @@ export class ValidTestComponent implements OnInit {
   }
 
   submitMe() {
-    this.emp.push({ name: this.emp.name, age: this.emp.age, dob: this.emp.dob });
+    //this.emp.push([{ name: this.emp.name, age: this.emp.age, dob: this.emp.dob }]);
   }
 }

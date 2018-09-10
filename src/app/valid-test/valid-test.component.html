@@ -1,46 +1,36 @@
-<form name="myForm">
-    <input name="myInput" ng-model="myInput" required>
-  </form>
-  
-  <p>The input's valid state is:</p>
-  <h1>{{myForm.myInput.$valid}}</h1>
-
-
-
-
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <div class="container">
-  <form (submit)="submitMe()" name ="myForm">
+  <form (submit)="submitMe()" name="myForm">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="text"  ngModel="name" required class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name......">
+      <input type="text" ngModel="name" required class="form-control" name="name" aria-describedby="emailHelp"
+        placeholder="Enter name......">
       <p>this input's valid state is : </p>
       <h1>{{myForm.name.$valid}}</h1>
-      
+
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Age</label>
-      
+
       <input type="number" [(ngModel)]="emp.age" class="form-control" id="age" name="age" placeholder="Age.......">
-    
+
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Date Of Birth</label>
-      
+
       <input type="date" [(ngModel)]="emp.dob" class="form-control" id="dob" name="dob" placeholder="Date Of Birth">
-    
+
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 <h3>{{test}}</h3>
-<!-- *ngFor="let e of emp" 
+ *ngFor="let e of emp" 
 <div *ngFor="let e of emp;let i=index">
   number:{{i+1}}
   <p>{{e.name}}</p>
   <p>{{e.age}}</p>
   <p>{{e.dob}}</p>
   <p>--------------------</p>
-</div> -->
+</div>
